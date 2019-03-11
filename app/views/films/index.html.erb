@@ -1,0 +1,19 @@
+<%= form_with(model: @new_film) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :seen %>
+    <%= f.date_field :seen %>
+
+    <%= f.submit("Add film") %>
+<% end %>
+
+<% if @films.blank? %>
+    <p>No films to show</p>
+<% else %>
+    <ul>
+        <% @films.each do |film| %>
+            <li><%= film.title %></li>
+        <% end %>
+    </ul>
+<% end %>
