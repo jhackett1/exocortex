@@ -23,7 +23,7 @@ class FilmsController < ApplicationController
                 flash[:notice] = "Film added to list."
                 redirect_to root_path
             else
-                flash[:alert] = "That film could not be saved. Please try again."
+                flash[:alert] = "Can't save that film: #{@new_film.errors.full_messages.join(', ')}"
                 redirect_to root_path
             end
         else

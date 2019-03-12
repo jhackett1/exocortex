@@ -1,0 +1,14 @@
+.button{
+    display: inline-block;
+    padding: 20px 25px;
+    border: 2px solid white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 1px;
+}
+
+.button--filled{
+    background: $white;
+    color: $purple
+}

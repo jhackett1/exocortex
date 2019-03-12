@@ -1,0 +1,24 @@
+// Colors
+$purple: #0B0E1E;
+$lightPurple: #000F62;
+$white: #ffffff;
+$pink: #EA4C8A;
+
+// Other vars
+$font-stack: neue-haas-grotesk-display, sans-serif;
+$max-width: 900px;
+
+// Resets and global styles
+*{
+    font-family: $font-stack;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Utility classes
+.container{
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+}
