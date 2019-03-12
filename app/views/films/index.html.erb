@@ -13,7 +13,10 @@
 <% else %>
     <ul>
         <% @films.each do |film| %>
-            <li><%= film.title %></li>
+            <li>
+                <h2><%= film.official_title %></h2>
+                <p><%= film.official_overview.truncate(240) %></p>
+            </li>
         <% end %>
     </ul>
 <% end %>

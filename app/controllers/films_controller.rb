@@ -11,17 +11,13 @@ class FilmsController < ApplicationController
     def create
         @film = current_user.films.build(film_params)
 
-        # puts film_params[:title]
-
         api = MoviesAdapter.new
         response = api.search(film_params[:title])
-        film = response["results"][0]
+        film_result = response["results"][0]
 
-        puts film["title"]
-        puts film["poster_path"]
-        puts film["overview"]
-
-        
+        @film[:official_title] = film_result["title"]
+        @film[:official_overview] = film_result["overview"]
+        @film[:poster] = film_result["poster_path"]
 
         if @film.save
             redirect_to root_path
