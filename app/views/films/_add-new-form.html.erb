@@ -1,0 +1,7 @@
+<%= form_with(model: @new_film) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title, {required: false} %>
+    <%= f.label :seen %>
+    <%= f.date_field :seen, {required: false} %>
+    <%= f.submit("Add film") %>
+<% end %>
