@@ -7,9 +7,22 @@ class FilmsController < ApplicationController
         @new_film = current_user.films.new
     end
 
-    # Process creation
+    # Create new record
     def create
         @film = current_user.films.build(film_params)
+
+        # puts film_params[:title]
+
+        api = MoviesAdapter.new
+        response = api.search(film_params[:title])
+        film = response["results"][0]
+
+        puts film["title"]
+        puts film["poster_path"]
+        puts film["overview"]
+
+        
+
         if @film.save
             redirect_to root_path
         end
