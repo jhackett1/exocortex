@@ -1,0 +1,6 @@
+<div class="film">
+    <img class="film__poster" ssrc="<%= film.poster_preview %>" alt="<%= film.poster_alt_text %>"/>
+    <p class="film__seen-at">Seen <%= time_ago_in_words(film.seen) %> ago</p>
+    <h2 class="film__title"><%= film.official_title %></h2>
+    <p class="film__overview"><%= film.official_overview %></p>
+</div>
